@@ -2,7 +2,7 @@
   "name": "dot-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server.js",
@@ -12,10 +12,13 @@
   "author": "Damilola Oyeyipo",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.1.0",
     "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
+    "errorhandler": "^1.5.1",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
     "jest": "^27.5.1",
     "mongodb-memory-server": "^8.4.2",
     "mongoose": "^6.2.11",
