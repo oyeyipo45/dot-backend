@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-const server = app.listen(config.port, () => {
+const server = app.listen(config.port || 5000, () => {
   console.log(`Express running → PORT ${config.port}`);
 });
 

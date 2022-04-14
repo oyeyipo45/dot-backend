@@ -37,7 +37,7 @@ app.use('/pages', pageRouter);
 
 app.get('/', function (req: express.Request, res: express.Response) {
   return res.status(200).json({
-    message: 'Dalt pay home',
+    message: 'Dot test home',
     status: 200,
   });
 });

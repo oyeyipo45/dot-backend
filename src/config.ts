@@ -1,21 +1,21 @@
 const environments: any = {};
 environments.test = {
-  port: 4000,
+  port: `${process.env.PORT}`,
   database: `${process.env.TEST_MONGODB}`,
   envName: 'test enviroment',
-  site: 'http://localhost:4000',
+  site: `http://localhost:${process.env.PORT}`,
 };
 environments.development = {
-  port: 4000,
+  port: `${process.env.PORT}`,
   database: `${process.env.DEV_MONGODB}`,
   envName: 'Development enviroment',
-  site: 'http://localhost:4000',
+  site:   `http://localhost:${process.env.PORT}`,
 };
 environments.production = {
-  port: 8080,
+  port: `${process.env.PORT}`,
   database: `${process.env.PROD_MONGODB}`,
   envName: 'Production enviroment',
-  site: 'https://hackathon-slhbx5lcqq-uc.a.run.app',
+  site: '',
 };
 
 const currentEnvironment = process.env.NODE_ENV ? process.env.NODE_ENV : '';
