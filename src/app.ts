@@ -6,6 +6,7 @@ import path from 'path';
 import cors from 'cors';
 import MongoStore from 'connect-mongo';
 import errorHandler from 'errorhandler';
+import pageRouter from './routes/pageRoutes';
 
 dotenv.config({ path: 'variable.env' });
 
@@ -13,6 +14,7 @@ dotenv.config({ path: 'variable.env' });
 
 const app = express();
 
+app.use(cors())
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,6 +33,7 @@ if (process.env.NODE_ENV !== 'test') {
   );
 }
 
+app.use('/pages', pageRouter);
 
 app.get('/', function (req: express.Request, res: express.Response) {
   return res.status(200).json({

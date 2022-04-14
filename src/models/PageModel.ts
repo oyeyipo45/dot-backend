@@ -5,13 +5,13 @@ import mongoose from 'mongoose';
 //@ts-ignore
 import mongoosedbErrorHandler from 'mongoose-mongodb-errors';
 
-interface Page {
+export interface Page {
   title: string;
   description: string;
   tags: string[];
 }
 
-interface User {
+export interface User {
   id: string;
   created_at: Date;
 }
@@ -55,9 +55,9 @@ const pageSchema = new mongoose.Schema(
         lowercase: true,
         required: true,
       },
-      created_at: { type: Date, required: true, default: Date.now },
+      created_at: { type: String, lowercase: true, required: true },
     },
-    created_at: { type: Date, required: true, default: Date.now },
+    created_at: { type: String, lowercase: true, required: true },
   },
   {
     toJSON: { virtuals: true },
