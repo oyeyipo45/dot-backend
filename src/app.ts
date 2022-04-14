@@ -36,8 +36,8 @@ if (process.env.NODE_ENV !== 'test') {
 app.use('/pages', pageRouter);
 
 app.get('/', function (req: express.Request, res: express.Response) {
-  return res.status(200).json({
-    message: 'Dot test home',
+  return res.send(200).json({
+    message: 'Ping Dot test server',
     status: 200,
   });
 });
