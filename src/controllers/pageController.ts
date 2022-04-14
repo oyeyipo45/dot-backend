@@ -28,7 +28,7 @@ export const registerPage = async (req: Request, res: Response) => {
 
 export const getPages = async (req: Request, res: Response) => {
   try {
-    const pages = await PageModel.find();
+    const pages = await PageModel.find().sort({created_at : -1})
 
     res.status(200).json({ data: pages, message: 'Pages fetched successfully' });
   } catch (error: any) {
